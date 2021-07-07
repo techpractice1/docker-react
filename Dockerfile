@@ -15,8 +15,8 @@ RUN npm run build
 # /app/build will be the output of the run 
 
 # RUN PHASE
-FROM nginx:alpine 
-
+FROM nginx:alpine
+EXPOSE 80 
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # nGINX starts automatically with default command
